@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <style>
+        input{
+            height: 20px;
+            width: 70px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h2>Login Form</h2>
+        <form action="{{url_for('login')}}"method="post"
+            {% if mesage is defined and mesage %}>
+            <div class="alert alert warning">
+                {{mesage}}
+            </div>
+            {% endif %}
+            <input type="text" placeholder="UserName"><br><br>
+            <input type="password" placeholder="password"><br><br>
+            <input type="submit" value="Login">
+            <a href="{{url_for('register')}}">Dont have account</a>
+        </form>
+    </center>
+</body>
+</html>
